@@ -231,7 +231,7 @@ print('l --> ',l)
 l -->  ('d', 'b', 'a', 'f', 'd')
 ```
 
-## Python画个正方形状
+## Python画个正方形
 ```python
 import turtle as t
 
