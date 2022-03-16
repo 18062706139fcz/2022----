@@ -91,3 +91,155 @@ while flag < 2:
 	main(flag)
 	flag = flag + 1
 ```
+
+## python中的math的常见函数
+
+![image](https://img-blog.csdnimg.cn/2019011919390711.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NDA3NjM4NA==,size_16,color_FFFFFF,t_70)
+
+> math.float()，转化成小于等于这个数的最大整数「用的少」，因为用int就可以
+
+```python
+引入的三种方法：
+import math
+math.sqrt()
+
+import matplotlib as plt
+plt.plot()
+
+from math import sin,pi
+sin()
+cos()
+```
+
+## python中的列表
+```python
+Python中列表可以存储任何类型的数据，同一个列表中的__数据类型还可以不同__；
+列表是序列结构，可以进行序列结构的基本操作：索引、切片、加、乘、检查成员。
+1.mkdir 
+l = [1024,0.5,'python']
+2.cd 
+l = [1024,0.5,'python']
+print('l[0] --> ',l[0])
+print('l[1:] --> ',l[1:])
+
+列表中的函数
+1.append()「向列表中添加新元素」
+l = [1024, 0.5, 'Python']
+# 修改列表中第二个元素
+l[1] = 5
+# 向列表中添加新元素
+l.append('Hello')
+print('l[1] -->', l[1])
+print('l -->', l)
+result：
+l[1] --> 5
+l --> [1024, 5, 'Python', 'Hello']
+
+2.del()「删除列表中元素」
+l = [1024,0.5,'python']
+#删除第二个元素
+del l[1]
+print('l --> ',l)
+#输出结果
+l -->  [1024, 'Python']
+
+3.常用方法：
+1.count()
+统计列表中某个元素出现的次数
+l = ['a','b','v','c','b']
+print('l.count(b) --> ',l.count('b'))
+#输出结果
+l.count(b) -->  2
+
+2.index()
+查找某个元素在列表中首次出现的位置（即索引）
+l = ['a','b','v','c','b']
+print("l.index('b') --> ",l.index('b'))
+#输出
+l.index('b') -->  1
+「只找第一个哦」
+
+3.remove（）
+l = ['a','b','v','c','b']
+l.remove('b')
+print('l --> ',l)
+#输出
+l -->  ['a', 'v', 'c', 'b']「只有第一个删除」
+
+4.sort()
+l = ['a','b','v','c','b']
+l.sort()
+print('l --> ',l)
+#输出
+l -->  ['a', 'b', 'b', 'c', 'v']
+
+5.copy()
+复制列表
+l = ['a','b','v','c','b']
+lc = l.copy()
+print('lc --> ',lc)
+#输出
+lc -->  ['a', 'b', 'v', 'c', 'b']
+```
+
+## Python中的元组
+```python
+元组（tuple）与列表类似，但元组是不可变的，可简单将其看作是不可变的列表，元组常用于保存不可修改的内容。
+1.mkdir
+t = (1024, 0.5, 'Python')
+print('t[0] -->', t[0])
+print('t[1:] -->', t[1:])
+#输出结果：
+t[0] --> 1024
+t[1:] --> (0.5, 'Python')
+
+2.修改「元组中元素不能被修改，我们要用重新赋值的方式操作」
+t = (1024, 0.5, 'Python')
+t = (1024, 0.5, 'Python', 'Hello')
+print('t -->', t)
+#输出结果：
+t --> (1024, 0.5, 'Python', 'Hello')
+
+3.删除「元组中的元素不能被删除，我们只能删除整个元组」
+t = (1024, 0.5, 'Python')
+del t
+print('t --> ',t)
+#输出结果
+NameError: name 't' is not defined
+
+常用方法 len()
+1.len
+t = (1024, 0.5, 'Python')
+lens = len(t)
+print('lens --> ',lens)
+#输出结果
+lens -->  3
+
+2.max()和min()
+t = ('d', 'b', 'a', 'f', 'd')
+print('max(t) -->', max(t))
+print('min(t) -->', min(t))
+输出结果
+max(t) --> f
+min(t) --> a
+
+3.tuple()「将列表转换为元组」
+t = ['d', 'b', 'a', 'f', 'd']
+l = tuple(t)
+print('l --> ',l)
+#输出结果
+l -->  ('d', 'b', 'a', 'f', 'd')
+```
+
+## Python画个正方形状
+```python
+import turtle as t
+
+t.fd(100)
+t.left(90)
+t.fd(100)
+t.left(90)
+t.fd(100)
+t.left(90)
+t.fd(100)
+```
