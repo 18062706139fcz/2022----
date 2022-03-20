@@ -75,3 +75,53 @@ myMap.get('a string');   // "和键'a string'关联的值"
 myMap.get({});           // undefined, 因为keyObj !== {}
 myMap.get(function() {}); // undefined, 因为keyFunc !== function () {}
 ```
+
+[整数反转](https://leetcode-cn.com/problems/reverse-integer/submissions/)
+```JavaScript
+//1.调用函数做
+/**
+ * @param {number} x
+ * @return {number}
+ */
+var reverse = function(x) {
+    var max = Math.pow(2,31)-1;
+    var min = Math.pow(-2,31);
+    var sign = Math.sign(x);
+
+    var ans = x.toString().split("").reverse().join("");
+    ans = sign * parseInt(ans);
+    if(ans>max) return 0;
+    if(ans<min) return 0;
+    return ans;
+};
+```
+
+
+```JavaScript
+//2.求余做
+/**
+ * @param {number} x
+ * @return {number}
+ */
+var reverse = function(x) {
+    var max = Math.pow(2,31)-1;
+    var min = Math.pow(-2,31);
+    var ans = 0;
+    var f=0;
+    if(x<0){
+        f=1;
+        x=-x;
+    }
+    while(x>0)
+    {
+        var b = x % 10;
+        ans = ans*10+b;
+        x = (x-b) / 10;
+    }
+    // return ans;
+    if(ans>max) return 0;
+    if(ans<min) return 0;
+    if(f===0) return ans;
+    else return -ans;
+};
+```
