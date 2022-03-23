@@ -243,3 +243,29 @@ t.fd(100)
 t.left(90)
 t.fd(100)
 ```
+
+## split()方法
+```python
+a = "132 23 223 32 32"
+print(a.split())
+# ['132','23','233','32','32']
+```
+
+## map函数
+map(type,list)
+map(int ,input().split())
+
+## 循环结构
+```python
+for i in range(6):
+     print(t[i])
+for i in t:
+<!-- 输出的不是索引而是直接的值 -->
+     print(i)
+
+函数：len(t)
+函数
+
+```
+t.fd(100)
+t.fd(100)
