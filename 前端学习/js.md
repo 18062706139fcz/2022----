@@ -16,7 +16,8 @@ a();
 //执行顺序是首先调用a()方法，然后嵌套着调用b()方法，此时console.log(this)为全局--> Window
 //调用b()方法的时候又会调用c()方法，在function c()中使用了严格模式，在严格模式中默认this为undefined
 ```
-```
+
+```js
 var name = '小白';
 
 function special() {
