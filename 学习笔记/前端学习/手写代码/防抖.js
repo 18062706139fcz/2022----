@@ -25,7 +25,6 @@ window.onresize = debounce(function() {
 
 
 
-
 function debounce(fn, wait) {
     let timer;
     return function() {
@@ -34,38 +33,8 @@ function debounce(fn, wait) {
         if(timer) {
             clearTimeout(timer);
         }
-        timer = setTimeout(function(){
+        timer = setTimeout(() => {
             fn.apply(_this, args);
-        },wait)
+        }, wait)
     }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

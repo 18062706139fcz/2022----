@@ -15,3 +15,17 @@ function thorttle(fn, wait) {
         }
     }
 }
+
+function throttle(fn, wait) {
+    let timer;
+    return function() {
+        let _this = this;
+        let args = arguments;
+        if(!timer){
+            timer = setTimeout(() => {
+                timer = null;
+                fn.apply(_this, args)
+            }, wait)
+        }
+    }
+}
