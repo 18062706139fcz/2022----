@@ -21,4 +21,5 @@ function objectFactory() {
     return flag ? result : newObject;
 }
 
+
 objectFactory()
