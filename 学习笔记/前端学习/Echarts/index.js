@@ -1,0 +1,1 @@
+<script src="https://cdn.jsdelivr.net/npm/echarts@5.3.3/dist/echarts.js" integrity="sha256-E5b0O4AhPTlxRxD4SNUVrMx7/RQDnV2PjWpPIjWoXd4=" crossorigin="anonymous"></script>
