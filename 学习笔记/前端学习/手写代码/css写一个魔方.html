@@ -1,0 +1,700 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>JS Bin</title>
+</head>
+<body>
+  <div class="control-box"></div>
+  <input type="radio" name="cf" id="confront-r">
+  <input type="radio" name="cf" id="confront-g">
+  <input type="radio" name="cf" id="confront-b">
+  <input type="radio" name="cf" id="confront-p">
+  <input type="radio" name="cf" id="confront-w">
+  <input type="radio" name="cf" id="confront-y"> 
+  <label for="confront-r"></label>
+  <label for="confront-g"></label>
+  <label for="confront-b"></label>
+  <label for="confront-p"></label>
+  <label for="confront-w"></label>
+  <label for="confront-y"></label>
+  <div class="container">
+    <div class="box">
+      <div class="outer color-r1"></div>
+      <div class="outer color-r2"></div>
+      <div class="outer color-r3"></div>
+      <div class="outer color-r4"></div>
+      <div class="outer color-r5"></div>
+      <div class="outer color-r6"></div>
+      <div class="outer color-r7"></div>
+      <div class="outer color-r8"></div>
+      <div class="outer color-r9"></div>
+      <div class="outer color-g1"></div>
+      <div class="outer color-g2"></div>
+      <div class="outer color-g3"></div>
+      <div class="outer color-g4"></div>
+      <div class="outer color-g5"></div>
+      <div class="outer color-g6"></div>
+      <div class="outer color-g7"></div>
+      <div class="outer color-g8"></div>
+      <div class="outer color-g9"></div>
+      <div class="outer color-w1"></div>
+      <div class="outer color-w2"></div>
+      <div class="outer color-w3"></div>
+      <div class="outer color-w4"></div>
+      <div class="outer color-w5"></div>
+      <div class="outer color-w6"></div>
+      <div class="outer color-w7"></div>
+      <div class="outer color-w8"></div>
+      <div class="outer color-w9"></div>
+      <div class="outer color-y1"></div>
+      <div class="outer color-y2"></div>
+      <div class="outer color-y3"></div>
+      <div class="outer color-y4"></div>
+      <div class="outer color-y5"></div>
+      <div class="outer color-y6"></div>
+      <div class="outer color-y7"></div>
+      <div class="outer color-y8"></div>
+      <div class="outer color-y9"></div>
+      <div class="outer color-b1"></div>
+      <div class="outer color-b2"></div>
+      <div class="outer color-b3"></div>
+      <div class="outer color-b4"></div>
+      <div class="outer color-b5"></div>
+      <div class="outer color-b6"></div>
+      <div class="outer color-b7"></div>
+      <div class="outer color-b8"></div>
+      <div class="outer color-b9"></div>
+      <div class="outer color-p1"></div>
+      <div class="outer color-p2"></div>
+      <div class="outer color-p3"></div>
+      <div class="outer color-p4"></div>
+      <div class="outer color-p5"></div>
+      <div class="outer color-p6"></div>
+      <div class="outer color-p7"></div>
+      <div class="outer color-p8"></div>
+      <div class="outer color-p9"></div>
+      <div class="inner top1"></div>
+      <div class="inner top2"></div>
+      <div class="inner top3"></div>
+      <div class="inner top4"></div>
+      <div class="inner top5"></div>
+      <div class="inner top6"></div>
+      <div class="inner top7"></div>
+      <div class="inner top8"></div>
+      <div class="inner top9"></div>
+      <div class="inner btm1"></div>
+      <div class="inner btm2"></div>
+      <div class="inner btm3"></div>
+      <div class="inner btm4"></div>
+      <div class="inner btm5"></div>
+      <div class="inner btm6"></div>
+      <div class="inner btm7"></div>
+      <div class="inner btm8"></div>
+      <div class="inner btm9"></div>
+      <div class="inner left1"></div>
+      <div class="inner left2"></div>
+      <div class="inner left3"></div>
+      <div class="inner left4"></div>
+      <div class="inner left5"></div>
+      <div class="inner left6"></div>
+      <div class="inner left7"></div>
+      <div class="inner left8"></div>
+      <div class="inner left9"></div>
+      <div class="inner right1"></div>
+      <div class="inner right2"></div>
+      <div class="inner right3"></div>
+      <div class="inner right4"></div>
+      <div class="inner right5"></div>
+      <div class="inner right6"></div>
+      <div class="inner right7"></div>
+      <div class="inner right8"></div>
+      <div class="inner right9"></div>
+      <div class="inner back1"></div>
+      <div class="inner back2"></div>
+      <div class="inner back3"></div>
+      <div class="inner back4"></div>
+      <div class="inner back5"></div>
+      <div class="inner back6"></div>
+      <div class="inner back7"></div>
+      <div class="inner back8"></div>
+      <div class="inner back9"></div>
+      <div class="inner front1"></div>
+      <div class="inner front2"></div>
+      <div class="inner front3"></div>
+      <div class="inner front4"></div>
+      <div class="inner front5"></div>
+      <div class="inner front6"></div>
+      <div class="inner front7"></div>
+      <div class="inner front8"></div>
+      <div class="inner front9"></div>
+    </div>
+  </div>
+</body>
+</html>
+
+<style>
+    html,body{
+  padding: 0;
+  margin: 0;
+  background-color: #333;
+  min-width: 480px;
+}
+.control-box{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 34px; 
+  background-color: #fff;
+  z-index: -1;
+}
+[type="radio"]{
+  position: fixed;
+  top: 50px;
+  left : 0px;
+  pointer-events: none;
+  visibility: hidden;
+}
+#confront-r:checked ~[for="confront-r"]{
+  background-color: red;
+  color: #fff;
+}
+#confront-g:checked ~[for="confront-g"]{
+  background-color: green;
+  color: #fff;
+}
+#confront-b:checked ~[for="confront-b"]{
+  background-color: blue;
+  color: #fff;
+}
+#confront-p:checked ~[for="confront-p"]{
+  background-color: purple;
+  color: #fff;
+}
+#confront-w:checked ~[for="confront-w"]{
+  background-color: #aaa;
+  color: #fff;
+}
+#confront-y:checked ~[for="confront-y"]{
+  background-color: yellow;
+  color: #aaa;
+}
+#confront-r:checked ~ .container >.box{
+  transform: rotate3d(1,1,0,-30deg);
+}
+#confront-g:checked ~ .container >.box{
+  transform: rotate3d(1,1,0,150deg);
+}
+#confront-b:checked ~ .container >.box{
+  transform: rotate3d(1,1,0,-30deg)
+    rotateY(90deg);
+}
+#confront-p:checked ~ .container >.box{
+  transform: rotate3d(1,1,0,150deg)
+    rotateY(90deg);
+}
+#confront-w:checked ~ .container >.box{
+  transform: rotate3d(1,1,0,150deg)
+    rotateX(90deg);
+}
+#confront-y:checked ~ .container >.box{
+  transform: rotate3d(1,1,0,-30deg)
+    rotateX(90deg);
+}
+[for^="confront"]{
+  display: inline-block;
+  float: left;
+  height: 18px;
+  padding: 2px;
+  border: 1px solid #333;
+  background-color: #eee;
+  margin: 5px;
+  line-height: 18px;
+}
+[for="confront-r"]::before{
+  content: "正面朝前";
+}
+[for="confront-g"]::before{
+  content: "背面朝前";
+}
+[for="confront-b"]::before{
+  content: "左侧朝前";
+}
+[for="confront-p"]::before{
+  content: "右侧朝前";
+}
+[for="confront-w"]::before{
+  content: "顶面朝前";
+}
+[for="confront-y"]::before{
+  content: "底面朝前";
+}
+
+.container{
+  perspective: 1200;
+  position: absolute;
+  left: 45%;
+  top: 50%;
+  --redZ: 75px;
+  --greenZ: -75px;
+  --blueX: -75px;
+  --purpleX: 75px;
+  --whiteY: -75px;
+  --yellowY: 75px;
+  --frontZ: 25px;
+  --backZ: -25px;
+  --leftX: -25px;
+  --rightX: 25px;
+  --topY: -25px;
+  --btmY: 25px;
+  --YU: -50px;
+  --YD: 50px;
+  --XL: -50px;
+  --XR: 50px;
+  --ZB: -50px;
+  --ZF: 50px;
+  --redZ: 75px;
+  --greenZ: -75px;
+  --blueX: -75px;
+  --purpleX: 75px;
+  --whiteY: -75px;
+  --yellowY: 75px;
+}
+.box{
+  transform-style: preserve-3d;
+  transform: rotate3d(1,1,0,-30deg);
+  transition: transform 3s ease-in-out;
+}
+.box > *{
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  border: 1px solid rgba(200,200,200,0.8);
+}
+[class*="color-r"]{
+  background-color: #f00c;
+}
+[class*="color-g"]{
+  background-color: #0f0c;
+}
+[class*="color-b"]{
+  background-color: #00fc;
+}
+[class*="color-y"]{
+  background-color: #ff0c;
+}
+[class*="color-p"]{
+  background-color: #f0fc;
+}
+[class*="color-w"]{
+  background-color: #fffd;
+}
+[class^="inner"]{
+  background-color: #999f;
+}
+/* outer start */
+.color-r1{
+  transform: translate3d(var(--XL),var(--YU),var(--redZ));
+}
+.color-r2{
+  transform: translate3d(0,var(--YU),var(--redZ));
+}
+.color-r3{
+  transform: translate3d(var(--XR),var(--YU),var(--redZ));
+}
+.color-r4{
+  transform: translate3d(var(--XL),0,var(--redZ));
+}
+.color-r5{
+  transform: translate3d(0,0,var(--redZ));
+}
+.color-r6{
+  transform: translate3d(var(--XR),0,var(--redZ));
+}
+.color-r7{
+  transform: translate3d(var(--XL),var(--YD),var(--redZ));
+}
+.color-r8{
+  transform: translate3d(0,var(--YD),var(--redZ));
+}
+.color-r9{
+  transform: translate3d(var(--XR),var(--YD),var(--redZ));
+}
+.color-g1{
+  transform: translate3d(var(--XL),var(--YU),var(--greenZ));
+}
+.color-g2{
+  transform: translate3d(0,var(--YU),var(--greenZ));
+}
+.color-g3{
+  transform: translate3d(var(--XR),var(--YU),var(--greenZ));
+}
+.color-g4{
+  transform: translate3d(var(--XL),0,var(--greenZ));
+}
+.color-g5{
+  transform: translate3d(0,0,var(--greenZ));
+}
+.color-g6{
+  transform: translate3d(var(--XR),0,var(--greenZ));
+}
+.color-g7{
+  transform: translate3d(var(--XL),var(--YD),var(--greenZ));
+}
+.color-g8{
+  transform: translate3d(0,var(--YD),var(--greenZ));
+}
+.color-g9{
+  transform: translate3d(var(--XR),var(--YD),var(--greenZ));
+}
+.color-b1{
+  transform: translate3d(var(--blueX),var(--YU),var(--ZF))
+    rotateY(90deg);
+}
+.color-b2{
+  transform: translate3d(var(--blueX),var(--YU),0)
+    rotateY(90deg);
+}
+.color-b3{
+  transform: translate3d(var(--blueX),var(--YU),var(--ZB))
+    rotateY(90deg);
+}
+.color-b4{
+  transform: translate3d(var(--blueX),0,var(--ZF))
+    rotateY(90deg);
+}
+.color-b5{
+  transform: translate3d(var(--blueX),0,0)
+    rotateY(90deg);
+}
+.color-b6{
+  transform: translate3d(var(--blueX),0,var(--ZB))
+    rotateY(90deg);
+}
+.color-b7{
+  transform: translate3d(var(--blueX),var(--YD),var(--ZF))
+    rotateY(90deg);
+}
+.color-b8{
+  transform: translate3d(var(--blueX),var(--YD),0)
+    rotateY(90deg);
+}
+.color-b9{
+  transform: translate3d(var(--blueX),var(--YD),var(--ZB))
+    rotateY(90deg);
+}
+.color-p1{
+  transform: translate3d(var(--purpleX),var(--YU),var(--ZF))
+    rotateY(90deg);
+}
+.color-p2{
+  transform: translate3d(var(--purpleX),var(--YU),0)
+    rotateY(90deg);
+}
+.color-p3{
+  transform: translate3d(var(--purpleX),var(--YU),var(--ZB))
+    rotateY(90deg);
+}
+.color-p4{
+  transform: translate3d(var(--purpleX),0,var(--ZF))
+    rotateY(90deg);
+}
+.color-p5{
+  transform: translate3d(var(--purpleX),0,0)
+    rotateY(90deg);
+}
+.color-p6{
+  transform: translate3d(var(--purpleX),0,var(--ZB))
+    rotateY(90deg);
+}
+.color-p7{
+  transform: translate3d(var(--purpleX),var(--YD),var(--ZF))
+    rotateY(90deg);
+}
+.color-p8{
+  transform: translate3d(var(--purpleX),var(--YD),0)
+    rotateY(90deg);
+}
+.color-p9{
+  transform: translate3d(var(--purpleX),var(--YD),var(--ZB))
+    rotateY(90deg);
+}
+.color-w1{
+  transform: translate3d(var(--XL),var(--whiteY),var(--ZF))
+    rotateX(90deg);
+}
+.color-w2{
+  transform: translate3d(var(--XL),var(--whiteY),0)
+    rotateX(90deg);
+}
+.color-w3{
+  transform: translate3d(var(--XL),var(--whiteY),var(--ZB))
+    rotateX(90deg);
+}
+.color-w4{
+  transform: translate3d(0,var(--whiteY),var(--ZF))
+    rotateX(90deg);
+}
+.color-w5{
+  transform: translate3d(0,var(--whiteY),0)
+    rotateX(90deg);
+}
+.color-w6{
+  transform: translate3d(0,var(--whiteY),var(--ZB))
+    rotateX(90deg);
+}
+.color-w7{
+  transform: translate3d(var(--XR),var(--whiteY),var(--ZF))
+    rotateX(90deg);
+}
+.color-w8{
+  transform: translate3d(var(--XR),var(--whiteY),0)
+    rotateX(90deg);
+}
+.color-w9{
+  transform: translate3d(var(--XR),var(--whiteY),var(--ZB))
+    rotateX(90deg);
+}
+.color-y1{
+  transform: translate3d(var(--XL),var(--yellowY),var(--ZF))
+    rotateX(90deg);
+}
+.color-y2{
+  transform: translate3d(var(--XL),var(--yellowY),0)
+    rotateX(90deg);
+}
+.color-y3{
+  transform: translate3d(var(--XL),var(--yellowY),var(--ZB))
+    rotateX(90deg);
+}
+.color-y4{
+  transform: translate3d(0,var(--yellowY),var(--ZF))
+    rotateX(90deg);
+}
+.color-y5{
+  transform: translate3d(0,var(--yellowY),0)
+    rotateX(90deg);
+}
+.color-y6{
+  transform: translate3d(0,var(--yellowY),var(--ZB))
+    rotateX(90deg);
+}
+.color-y7{
+  transform: translate3d(var(--XR),var(--yellowY),var(--ZF))
+    rotateX(90deg);
+}
+.color-y8{
+  transform: translate3d(var(--XR),var(--yellowY),0)
+    rotateX(90deg);
+}
+.color-y9{
+  transform: translate3d(var(--XR),var(--yellowY),var(--ZB))
+    rotateX(90deg);
+}
+/* outer end */
+
+
+
+/* innner start */
+.front1{
+  transform: translate3d(var(--XL),var(--YU),var(--frontZ));
+}
+.front2{
+  transform: translate3d(0,var(--YU),var(--frontZ));
+}
+.front3{
+  transform: translate3d(var(--XR),var(--YU),var(--frontZ));
+}
+.front4{
+  transform: translate3d(var(--XL),0,var(--frontZ));
+}
+.front5{
+  transform: translate3d(0,0,var(--frontZ));
+}
+.front6{
+  transform: translate3d(var(--XR),0,var(--frontZ));
+}
+.front7{
+  transform: translate3d(var(--XL),var(--YD),var(--frontZ));
+}
+.front8{
+  transform: translate3d(0,var(--YD),var(--frontZ));
+}
+.front9{
+  transform: translate3d(var(--XR),var(--YD),var(--frontZ));
+}
+.back1{
+  transform: translate3d(var(--XL),var(--YU),var(--backZ));
+}
+.back2{
+  transform: translate3d(0,var(--YU),var(--backZ));
+}
+.back3{
+  transform: translate3d(var(--XR),var(--YU),var(--backZ));
+}
+.back4{
+  transform: translate3d(var(--XL),0,var(--backZ));
+}
+.back5{
+  transform: translate3d(0,0,var(--backZ));
+}
+.back6{
+  transform: translate3d(var(--XR),0,var(--backZ));
+}
+.back7{
+  transform: translate3d(var(--XL),var(--YD),var(--backZ));
+}
+.back8{
+  transform: translate3d(0,var(--YD),var(--backZ));
+}
+.back9{
+  transform: translate3d(var(--XR),var(--YD),var(--backZ));
+}
+.left1{
+  transform: translate3d(var(--leftX),var(--YU),var(--ZF))
+    rotateY(90deg);
+}
+.left2{
+  transform: translate3d(var(--leftX),var(--YU),0)
+    rotateY(90deg);
+}
+.left3{
+  transform: translate3d(var(--leftX),var(--YU),var(--ZB))
+    rotateY(90deg);
+}
+.left4{
+  transform: translate3d(var(--leftX),0,var(--ZF))
+    rotateY(90deg);
+}
+.left5{
+  transform: translate3d(var(--leftX),0,0)
+    rotateY(90deg);
+}
+.left6{
+  transform: translate3d(var(--leftX),0,var(--ZB))
+    rotateY(90deg);
+}
+.left7{
+  transform: translate3d(var(--leftX),var(--YD),var(--ZF))
+    rotateY(90deg);
+}
+.left8{
+  transform: translate3d(var(--leftX),var(--YD),0)
+    rotateY(90deg);
+}
+.left9{
+  transform: translate3d(var(--leftX),var(--YD),var(--ZB))
+    rotateY(90deg);
+}
+.right1{
+  transform: translate3d(var(--rightX),var(--YU),var(--ZF))
+    rotateY(90deg);
+}
+.right2{
+  transform: translate3d(var(--rightX),var(--YU),0)
+    rotateY(90deg);
+}
+.right3{
+  transform: translate3d(var(--rightX),var(--YU),var(--ZB))
+    rotateY(90deg);
+}
+.right4{
+  transform: translate3d(var(--rightX),0,var(--ZF))
+    rotateY(90deg);
+}
+.right5{
+  transform: translate3d(var(--rightX),0,0)
+    rotateY(90deg);
+}
+.right6{
+  transform: translate3d(var(--rightX),0,var(--ZB))
+    rotateY(90deg);
+}
+.right7{
+  transform: translate3d(var(--rightX),var(--YD),var(--ZF))
+    rotateY(90deg);
+}
+.right8{
+  transform: translate3d(var(--rightX),var(--YD),0)
+    rotateY(90deg);
+}
+.right9{
+  transform: translate3d(var(--rightX),var(--YD),var(--ZB))
+    rotateY(90deg);
+}
+.top1{
+  transform: translate3d(var(--XL),var(--topY),var(--ZF))
+    rotateX(90deg);
+}
+.top2{
+  transform: translate3d(var(--XL),var(--topY),0)
+    rotateX(90deg);
+}
+.top3{
+  transform: translate3d(var(--XL),var(--topY),var(--ZB))
+    rotateX(90deg);
+}
+.top4{
+  transform: translate3d(0,var(--topY),var(--ZF))
+    rotateX(90deg);
+}
+.top5{
+  transform: translate3d(0,var(--topY),0)
+    rotateX(90deg);
+}
+.top6{
+  transform: translate3d(0,var(--topY),var(--ZB))
+    rotateX(90deg);
+}
+.top7{
+  transform: translate3d(var(--XR),var(--topY),var(--ZF))
+    rotateX(90deg);
+}
+.top8{
+  transform: translate3d(var(--XR),var(--topY),0)
+    rotateX(90deg);
+}
+.top9{
+  transform: translate3d(var(--XR),var(--topY),var(--ZB))
+    rotateX(90deg);
+}
+.btm1{
+  transform: translate3d(var(--XL),var(--btmY),var(--ZF))
+    rotateX(90deg);
+}
+.btm2{
+  transform: translate3d(var(--XL),var(--btmY),0)
+    rotateX(90deg);
+}
+.btm3{
+  transform: translate3d(var(--XL),var(--btmY),var(--ZB))
+    rotateX(90deg);
+}
+.btm4{
+  transform: translate3d(0,var(--btmY),var(--ZF))
+    rotateX(90deg);
+}
+.btm5{
+  transform: translate3d(0,var(--btmY),0)
+    rotateX(90deg);
+}
+.btm6{
+  transform: translate3d(0,var(--btmY),var(--ZB))
+    rotateX(90deg);
+}
+.btm7{
+  transform: translate3d(var(--XR),var(--btmY),var(--ZF))
+    rotateX(90deg);
+}
+.btm8{
+  transform: translate3d(var(--XR),var(--btmY),0)
+    rotateX(90deg);
+}
+.btm9{
+  transform: translate3d(var(--XR),var(--btmY),var(--ZB))
+    rotateX(90deg);
+}
+/* inner end */
+</style>
