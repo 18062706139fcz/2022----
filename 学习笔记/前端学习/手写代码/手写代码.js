@@ -159,3 +159,22 @@ MyPromise.prototype.then = function(onResolved, onRejected) {
         onRejected(this.value)
     }
 }
+
+/**
+ * 如何实现一个懒加载
+ * 1. 定义：窗口到了这个页面，图片才进行加载
+ * 2. 如何实现：getBoundingClientRect API + 
+ *    Scroll with + DataSet API
+*/
+// 选择所有的图片
+const imgs = querySelectorAll('img');
+imgs.forEach((item) => {
+    if(
+        getBoundingClientRect().top < document.documentElement.clientHeight
+    ) {
+        if ('src' in item.dataset) {
+            item.src = item.dataset.src
+        }
+    }
+})
+document.addEventListener('scroll',_.throttle(lazyLoad, 200));

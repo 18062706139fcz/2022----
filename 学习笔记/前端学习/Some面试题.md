@@ -358,3 +358,43 @@ Function.prototype.myCall = function(context) {
 + 因为JS是单线程的，单线程就意味着，所以任务需要排队，前一个任务结束，才会执行后一个任务。
 + 为了解决排除等待问题，JS的任务分为同步任务和异步任务。所有的同步任务都会在主线程上执行。异步任务（如果是WebAPI则会进入WebAPI，例如ajax，setTimeout）不进入主线程，而是进入另一个Callback Queue。
 + 同步任务顺序执行，只有执行栈中的同步任务执行完了，系统才会读取任务队列中可以执行的异步任务，才会把此异步任务从事件队列中放入执行栈执行，如此循环，知道把所有任务执行完毕。
+
+
+### forEach和map方法有什么区别
+
++ forEach() 会改变数组
++ map() 不会改变数组
+
+### 原型和原型链
+
++ 什么是原型
+
+> 我们新创建的对象中有有一个属性叫 prototype ,其实它是一个指针，
+> 指向构造函数，可以访问到构造函数中的属性和方法。
+
++ 什么是原型链
+
+> 当我们需要找到一个属性时，如果在当前对象内部没有这个属性，
+> 那么我们就可以继续在他的原型上找，然后不断的去找，直到找到，
+> 一般原型最后会遍历到Object.prototype，这也是新建对象能够使用toString()的原因
+
++ JavaScript中对象并没有一个属于自己的原型脚本，是通过引用来传递的。
++ 当修改原型时，与之相关的对象也会继承这一改变。
+
+```js
+// 原型｜修改｜重写
+function Person(name) {
+    this.name = name;
+}
+Person.prototype.getName = function() {}
+var p = new Person('Hello')
+// p.__proto__ === Person.prototype true
+// p.__proto__ === p.constructor.prototype true
+
+// __proto__的值就等于父类的prototype,
+```
+
+
+### HTML行内标签
+
+span|a|input|img|picture|label|textarea|select
