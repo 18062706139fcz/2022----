@@ -398,3 +398,80 @@ var p = new Person('Hello')
 ### HTML行内标签
 
 span|a|input|img|picture|label|textarea|select
+
+### 如何实现一个元素的垂直居中
+
+1. flex
+```css
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+```
+
+```css
+.container {
+    display: grid;
+    justify-content: center;
+    align-items: center;
+}
+```
+
+```css
+.parent {
+    position: relative;
+}
+.child {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%)
+}
+```
+
+### 如何实现一个bind
+
++ bind也是改变this指向的，返回的是一个函数，必须要调用之后，才会执行。
+
+```js
+Function.prototype.fakeBind = function (obj, ...args) {
+    return (...rest) => this.call(obj, ...args, ...rest);
+}
+```
+
+### 隐藏CSS的几种方法
+
+1. display
+2. opcity
+3. font-size
+4. position
+5. visibility
+6. content-visibility
+
+
+### 盒模型
+
+1. box-sizing: border-box|content-box
+
+### ES6中比较新的
++ Array.inclues
+
++++++++++++++++++++++++++++++++++
++ ?? ==> 只判断undefined和null ?.
++++++++++++++++++++++++++++++++++
+
++ Object.keys() | Object.getOwnPropertyNames()
+
++ Object.defineProperty
+
++ 跨域 + options请求「非简单请求」
+
++ vue-loader
+    + AST 「抽象语法树」
+
++ nextTick()
+
++ vue响应式原理
+
++ event loop JS是单线程的 ==> 异步会放到任务队列里去，同步任务执行完了才会执行异步任务
