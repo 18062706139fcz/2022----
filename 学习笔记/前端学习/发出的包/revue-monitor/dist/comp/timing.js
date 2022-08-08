@@ -3,7 +3,7 @@
  * @Author: Wang Dejiang(aei)
  * @Date: 2022-08-07 12:43:36
  * @LastEditors: 18062706139 2279549769@qq.com
- * @LastEditTime: 2022-08-07 21:10:25
+ * @LastEditTime: 2022-08-08 11:19:15
  */
 // fetch的一个特性 ｜ 只有网络断掉才出现错误 ｜ 所以我需要使用response来进行分析
 import onload from '../utils/onload'
@@ -30,7 +30,7 @@ let timing = () => {
   onload(function () {
     setTimeout(() => {
       const { fetchStart, loadEventStart } = performance.timing
-
+      // performance 本身存在？
       let FP = performance.getEntriesByName('first-paint')[0]
       let FCP = performance.getEntriesByName('first-contentful-paint')[0]
       let loadTime = loadEventStart - fetchStart
