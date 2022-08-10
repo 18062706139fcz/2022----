@@ -3,7 +3,7 @@
  * @Author: Wang Dejiang(aei)
  * @Date: 2022-08-07 12:43:36
  * @LastEditors: 18062706139 2279549769@qq.com
- * @LastEditTime: 2022-08-08 11:19:15
+ * @LastEditTime: 2022-08-10 15:12:42
  */
 // fetch的一个特性 ｜ 只有网络断掉才出现错误 ｜ 所以我需要使用response来进行分析
 import onload from '../utils/onload'
@@ -11,6 +11,7 @@ import http from '../utils/request'
 
 let timing = () => {
   let FMP, LCP
+  // 内置
   if (PerformanceObserver) {
     // 增加一个性能条目的观察者
     new PerformanceObserver((entryList, observer) => {
@@ -48,6 +49,7 @@ let timing = () => {
         type: 'paint', //统计每个阶段的时间
         firstPaint: FP.startTime,
         firstContentfulPaint: FCP.startTime,
+        // 加个问号是为啥？？？
         firstMeaningfulPaint: FMP?.startTime || -1,
         largestContentfulPaint: LCP?.startTime || -1,
         timeStamp: Date.now(),

@@ -2,8 +2,8 @@
  * @Descripttion: 
  * @Author: Wang Dejiang(aei)
  * @Date: 2022-08-07 12:40:40
- * @LastEditors: Wang Dejiang(aei)
- * @LastEditTime: 2022-08-07 16:54:10
+ * @LastEditors: 18062706139 2279549769@qq.com
+ * @LastEditTime: 2022-08-10 15:37:17
  */
 import onload from '../utils/onload'
 import http from '../utils/request'
@@ -11,6 +11,7 @@ import http from '../utils/request'
 let blankScreen = () => {
   let wrapperElements = ['html', 'body', '#app']
   let emptyPoints = 0
+  // 处理成我想要的形式
   function getSelector(element) {
     if (element.id) {
       return '#' + element.id
@@ -27,12 +28,14 @@ let blankScreen = () => {
       return element.nodeName.toLowerCase()
     }
   }
+  // 判断是不是覆盖元素
   function isWrapper(element) {
     let selector = getSelector(element)
     if (wrapperElements.indexOf(selector) !== -1) {
       emptyPoints++
     }
   }
+  // 18个点判断白屏
   onload(function () {
     for (let i = 1; i <= 9; i++) {
       let xElements = document.elementsFromPoint(
