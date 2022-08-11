@@ -475,3 +475,36 @@ Function.prototype.fakeBind = function (obj, ...args) {
 + vue响应式原理
 
 + event loop JS是单线程的 ==> 异步会放到任务队列里去，同步任务执行完了才会执行异步任务
+
+### v-if v-show v-html原理
+
++ v-if会调用addIfCondition方法，生成vnode的时候会忽略对应节点，render的时候就不会渲染
++ v-show会生成vnode，render的时候也会渲染成真实节点，只是在render过程中会在节点的属性中修改show属性值，也就是常说的display；
++ v-html会先移除节点下的所有节点，调用html，通过addProp添加innerHTML属性，归根结底还是设置innerHTML为v-html的值
+
+### v-model是如何实现的，语法糖实际是什么？
+
+1. 作用在表单元素上
+```ts
+<input v-mode="sth" />
+// 等同于
+<input 
+    v-bind:value="message"
+    v-on:input="message=$event.target.value"
+/>
+```
+
+2. 作用在组件上
+```ts
+<aa-input v-model="aa"></aa-input>
+// 等价于
+<aa-input v-bind:value="aa" v-on:input="aa=$event.target.valu"></aa-input>
+// 子组件
+<aa-input v-bind:value="aa" v-on:input="onmessage"></aa-input>
+props: {value:aa,}
+methods: {
+    onmessage(e) {
+        $emit('input', e.target.value)
+    }
+}
+```
