@@ -508,3 +508,26 @@ methods: {
     }
 }
 ```
+
++ DNS域名解析过程：
+
+1. 检查浏览器缓存
+2. 检查操作系统缓存，常见的如hosts文件
+3. 检查路由器缓存
+4. 如果前几步都没找到，会想ISP（网络服务供应商）的LDNS服务器查询
+5. 如果LDNS服务器没找到，会向根域名服务器请求解析
+
++ 什么是JSONP
+
+> 浏览器通过<script>标签的src属性，请求服务器上的数据，同时，服务器返回一个函数的调用，这种请求数据的方式叫做JSONP
+> 1. JSONP不属于真正的ajax请求
+> 2. 仅支持GET
+
+```js
+app.get('/api/jsonp', (req, res) => {
+    const funcName = req.query.callback;
+    const data = {name: 'zs', age: 22}
+    const scriptStr = `${funcName}(${JSON.stringify(data)})`
+    res.send(scriptStr)
+})
+```
