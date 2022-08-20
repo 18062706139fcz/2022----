@@ -531,3 +531,122 @@ app.get('/api/jsonp', (req, res) => {
     res.send(scriptStr)
 })
 ```
+
+### Vue相关面试题
+
+#### 父子组件传值
+
+1. 父组件通过props向子组件传递数据，子组件通过`$emit`向父组件通信。
+2. eventBus事件总线（$emit/$on）
+3. ref/$refs 在父组件中可以通过this.$refs.name.方法或属性拿到这些属性或方法。
+4. $parent,$children分别访问父组件中的实例以及子组件中的实例，但是，$children并不能保证顺序，并且访问的数据也不是响应式的。
+
+#### 生命周期
+
++ created ：实例创建完成，实例上配置的options包括data、computed、watch、methods都已经配置完成了。但是渲染节点还未挂载DOM，所以不能访问到$el属性。
+
++ mounted：在el被新创建的 vm.$el 替换，并挂载到实例上去之后调用。实例已完成以下的配置：用上面编译好的html内容替换el属性指向的DOM对象。完成模板中的html渲染到html 页面中。此过程中进行ajax交互。
+
+### 手写防抖节流
+```js
+function thor(fn, wait) {
+    let tiemr = null;
+    return function() {
+        let _this = this;
+        let args = arguments;
+        if(timer) {
+            clearTimeout(timer)
+        }
+        timer = setTimeout(function() {
+            fn.apply(_this, args)
+        }, wait)
+    }
+}
+function thor(fn, wait) {
+    let tiemr = null;
+    return function() {
+        let _this = this;
+        let args = arguments;
+        if(!timer) {
+            tiemr = setTimeout(function() {
+                tiemr = null;
+                fn.apply(_this, args)
+            }, wait)
+        }
+    }
+}
+```
+### 手写bind，apply，call
+
+```js
+// call
+Function.prototype.call = function (context, ...args) {
+    context = context || window;
+
+    const fnSymbol = Symbol("fn");
+    context[fnSymbol] = this;
+
+    context[fnSymbol](...args);
+    delete context[fnSymbol];
+} 
+
+
+Function.prototype.apply = function (context, argsArr) {
+    context = context || window;
+
+    const fnSymbol = Symbol("fn");
+    context[fnSymbol] = this;
+
+    context[fnSymbol](...argsArr);
+    delete context[fnSymbol];
+}
+```
+
+```js
+Function.prototype.call = function(context, argsArr) {
+    context = context || window;
+
+    const fnSymbol = Symbol("fn");
+    context[fnSymbol] = this;
+
+    context[fnSymbol](...argsArr);
+    delete context[fnSymbol];
+}
+```
+
+
+```js
+Function.prototyoe.apply = function(context, argsArr) {
+    context = context || window;
+
+    const fnSymbol = Symbol("fn");
+    context[fnSymbol] = this;
+
+    context[fnSymbol](...argsArr);
+    delete context[fnSymbol]
+}
+```
+
+```js
+// 1. A B 
+// D
+// C E D A B
+setTimeout(()=>{
+    console.log('A');
+},0);
+var obj={
+    func:function () {
+        setTimeout(function () {
+            console.log('B')
+        },0);
+        return new Promise(function (resolve) {
+            console.log('C');
+            resolve();
+        })
+    }
+};
+obj.func().then(function () {
+    console.log('D')
+});
+console.log('E');
+```
