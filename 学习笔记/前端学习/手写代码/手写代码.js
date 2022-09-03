@@ -1,6 +1,9 @@
 /**
  * JavaScript基础
- * */ 
+ * */
+const { prototype } = require("cos-nodejs-sdk-v5")
+
+ 
 
 // 1. 手写 Object.create
 /**
@@ -31,13 +34,12 @@ function create(obj) {
  * right 是类型的原型
 */
 
-function myInstanceof(left, right) {
-    let proto = Object.getPrototypeOf(left),
-        prototype = right.prototype;
+function myInstanceOf(left, right) {
+    let proto = Object.getPrototypeOf(left)
+        prototype = right.prototype
     while(true) {
         if(!proto) return false
         if(proto === prototype) return true
-        // 继续往原型链上面遍历
         proto = Object.getPrototypeOf(proto)
     }
 }
